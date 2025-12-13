@@ -49,7 +49,7 @@ def main():
             except ValueError:
                 print("Please enter a valid number.")
 
-    # Temporary Commended Out Single Input Test Case
+    # Temporary Commented Out Single Input Test Case
     """
     #  Ask for the x where P(x) is needed
     while True:
