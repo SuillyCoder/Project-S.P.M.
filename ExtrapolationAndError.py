@@ -26,8 +26,13 @@ def main():
             print("Please enter a valid integer.")
 
     #  Ask for X1..Xn and Y1..Yn
-    x_points = []
+    x_points = list(range(1, n + 1))  # [1,2] or [1,2,3] or [1,2,3,4] or [1,2,3,4,5]
     y_points = []
+
+    #I'm gonna comment this out for now, since we won't ask for the actual X Values. 
+    # Our X Values will always be 1,2,3,4,5 for the sake of simplicity and dealing with non-linear data.
+
+    """
     #  Ask for X1..Xn
     print("\nEnter the x-values:")
     for i in range(n):
@@ -38,6 +43,9 @@ def main():
                 break
             except ValueError:
                 print("Please enter a valid number.")
+
+    """
+    
        #  Ask for Y1..Yn
     print("\nEnter the y-values:")
     for i in range(n):
@@ -63,12 +71,12 @@ def main():
     result = lagrange_interpolation(x_points, y_points, x)
     print(f"\nThe estimated value P({x}) is: {result}")
     """
-
-    #To Try out Test Cases (3-5 Data Points Advance)
-    for i in range (5):
-        print(f"\n--- Test Case: Estimating P({5+i}) ---")
-        result = lagrange_interpolation(x_points, y_points, 5+(i+1))
-        print(f"\nThe estimated value P({5+i}) is: {result}")
+    
+    #TEST  2: Using Sequential Indices (1,2,3,4,5) to Try out Test Cases (3-5 Data Points Advance). This works better somehow.
+    for j in range (5):
+        print(f"\n--- Test Case: Estimating P({5+(j+1)}) ---")
+        result = lagrange_interpolation(x_points, y_points, 5+(j+1))
+        print(f"\nThe estimated value P({5+(j+1)}) is: {result}")
 
 if __name__ == "__main__":
     main()
