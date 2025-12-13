@@ -33,7 +33,7 @@ def main():
     for i in range(n):
         while True:
             try:
-                x_val = float(input(f"X{i+1}: "))
+                x_val = float(input(f"X{i}: "))
                 x_points.append(x_val)
                 break
             except ValueError:
@@ -43,12 +43,14 @@ def main():
     for i in range(n):
         while True:
             try:
-                y_val = float(input(f"Y{i+1}: "))
+                y_val = float(input(f"Y{i}: "))
                 y_points.append(y_val)
                 break
             except ValueError:
                 print("Please enter a valid number.")
 
+    # Temporary Commended Out Single Input Test Case
+    """
     #  Ask for the x where P(x) is needed
     while True:
         try:
@@ -60,10 +62,14 @@ def main():
     #  Compute and print result
     result = lagrange_interpolation(x_points, y_points, x)
     print(f"\nThe estimated value P({x}) is: {result}")
+    """
+
+    #To Try out Test Cases (3-5 Data Points Advance)
+    for i in range (5):
+        print(f"\n--- Test Case: Estimating P({5+i}) ---")
+        result = lagrange_interpolation(x_points, y_points, 5+(i+1))
+        print(f"\nThe estimated value P({5+i}) is: {result}")
 
 if __name__ == "__main__":
     main()
-    
-    
-
     
